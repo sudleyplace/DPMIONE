@@ -1,0 +1,17 @@
+DPMIONE  -- A DPMI 1.0 Host
+(C) Copyright 1990-2012 Sudley Place Software.  All Rights Reserved.
+
+
+Author & Copyright
+------------------
+
+This program was written by Bob Smith (bsmith@sudleyplace.com) and is
+(C) Copyright 1990-2012 Sudley Place Software.  The most recent version
+may be found at http://www.sudleyplace.com/download.htm.  For more
+information, see http://www.sudleyplace.com/dpmione/.
+
+
+License
+-------
+
+See the file LICENSE.

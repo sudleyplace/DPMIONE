@@ -1,0 +1,102 @@
+#;'$Header$
+PRGNAME=DPMIONE 	# Default program name
+OEM=RET 		# Default build type
+BIN=$(BINDIR)		# Directory for executables
+O=$(OEM)\		# OEM .obj's and temporary .inc's
+I=$(INCDIR)		# Path for include files
+Q=$(MAXDIR)		# Path for 386MAX include files
+G=$(WHDIR)		# Path for source files
+S=$(SWTDIR)		# Path for SWAT includes
+
+!IF "$(LNKCMD)" == ""
+LNKCMD=link
+!ENDIF
+
+# Default options for MASM
+MOPT=$(ASMOPT) /ml /p /r /t /w1
+
+# Default include path for MASM
+ALLINC=$(G);$(S);$(I);$(Q)
+
+{$(G)}.asm{$(O)}.obj:
+	set INCLUDE=$(ALLINC);$(INCLUDE)
+	masm %s $(MOPT),$(O);
+	set INCLUDE=$(INCLUDE)
+	@ff $*/,/#
+
+# Define all .OBJ's
+OBJS=	$(O)GXT_1ST.OBJ \
+	$(O)GXT_A20.OBJ \
+	$(O)GXT_ARG.OBJ \
+########$(O)GXT_DR2.OBJ \
+	$(O)GXT_DRV.OBJ \
+	$(O)GXT_FCN.OBJ \
+	$(O)GXT_INI.OBJ \
+	$(O)GXT_MAX.OBJ \
+	$(O)GXT_MSC.OBJ \
+	$(O)VERSION.OBJ
+
+ALL:	$(BIN)$(PRGNAME).EXE \
+	$(BIN)$(PRGNAME).SSF
+
+DEPSCAN = -r$(SRCROOT)
+DEPSCAN = $(DEPSCAN) -p{$$(G)}
+DEPSCAN = $(DEPSCAN) -t$(G)={$$(G)},$(Q)=$$(Q)
+DEPSCAN = $(DEPSCAN) *.asm
+DEPSCAN = $(DEPSCAN) >$(O)gxtdep.inc
+
+DEPSCAN: $(G)MAKEFILE
+	Set CATROOT=$(MAXROOT)
+	depscan $(DEPSCAN)
+
+$(G)MAKEFILE: $(O)gxtdep.inc
+
+!if exist ($(O)gxtdep.inc) == 0
+!if [depscan $(DEPSCAN)]
+!endif
+!endif
+!include $(O)gxtdep.inc
+
+
+$(BIN)$(PRGNAME).EXE:	$(O)$(PRGNAME).EXE
+	xc/r %s $@
+
+$(BIN)$(PRGNAME).SSF:	$(O)$(PRGNAME).SSF
+	xc/r %s $@
+
+$(O)$(PRGNAME).EXE: $(OBJS)	\
+		$(G)MAKEFILE	\
+		$(G)$(PRGNAME).WSG
+    $(LNKCMD) @<<$(O)$(PRGNAME).ARF
+$(OBJS: =+^
+)
+$(O)$(PRGNAME).EXE
+$(O)$(PRGNAME) /map /line /w:all;
+<<KEEP
+
+$(O)$(PRGNAME).MAP:	$(O)$(PRGNAME).EXE
+
+$(O)$(PRGNAME).SSF:	$(O)$(PRGNAME).MAP
+	mapssf -t$(O)$(PRGNAME).SSF -w$(PRGNAME).WSG -v+ $(O)$(PRGNAME).MAP
+
+
+$(O)GXT_1ST.OBJ:	$(G)GXT_1ST.ASM  $(GXT_1ST_ADEP)
+
+$(O)GXT_A20.OBJ:	$(G)GXT_A20.ASM  $(GXT_A20_ADEP)
+
+$(O)GXT_ARG.OBJ:	$(G)GXT_ARG.ASM  $(GXT_ARG_ADEP)
+
+$(O)GXT_DR2.OBJ:	$(G)GXT_DR2.ASM  $(GXT_DR2_ADEP)
+
+$(O)GXT_DRV.OBJ:	$(G)GXT_DRV.ASM  $(GXT_DRV_ADEP)
+
+$(O)GXT_FCN.OBJ:	$(G)GXT_FCN.ASM  $(GXT_FCN_ADEP)
+
+$(O)GXT_INI.OBJ:	$(G)GXT_INI.ASM  $(GXT_INI_ADEP)
+
+$(O)GXT_MAX.OBJ:	$(G)GXT_MAX.ASM  $(GXT_MAX_ADEP)
+
+$(O)GXT_MSC.OBJ:	$(G)GXT_MSC.ASM  $(GXT_MSC_ADEP)
+
+$(O)VERSION.OBJ:	$(G)VERSION.ASM  $(VERSION_ADEP)
+

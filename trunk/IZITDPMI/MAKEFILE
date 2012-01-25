@@ -1,0 +1,40 @@
+PROJ=IZITDPMI		# Project name
+O=RET\			# OEM directory
+S=R:\MAX\STATUTIL\	# Statutil directory
+R=.\			# Current directory
+
+!if "$(LNKCMD)" == ""
+LD=$(MSVC16)BIN\link
+!else
+LD=$(LNKCMD)
+!endif
+
+ALL:	$(O)$(PROJ).COM \
+	$(BINDIR)$(PROJ).COM
+
+{$(S)}.asm{$(O)}.obj:
+	masm /DW16 /DEXTDATASEG %s,$(O) /II:\;
+
+{$(R)}.asm{$(O)}.obj:
+	masm %s,$(O) /II:\;
+
+$(O)$(PROJ).OBJ:	$(PROJ).ASM
+
+$(O)PRINTF.OBJ: 	$(S)PRINTF.ASM
+
+OBJS=$(O)$(PROJ).OBJ \
+     $(O)PRINTF.OBJ
+
+$(O)$(PROJ).COM:	$(OBJS) MAKEFILE
+	echo >NUL @<<$(O)$(PROJ).ARF
+$(OBJS: =+^
+)
+$@
+$(O)$(PROJ).MAP/map/tiny;
+<<KEEP
+	$(LD) @$(O)$(PROJ).ARF
+	mapssf -t$(O)$(PROJ) $(O)$(PROJ).map
+
+$(BINDIR)$(PROJ).COM:	$(O)$(PROJ).COM
+	xc /r %s $@
+
