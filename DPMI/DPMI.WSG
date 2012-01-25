@@ -1,0 +1,27 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;	Windows Symbol Group file format
+;;
+;;	This file may contain comments, like this line, by preceding each
+;;	line with a semicolon (;).  Comments may also appear at the end of
+;;	each line, since all input after the group name is ignored.
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+; group mode	sel	group name
+
+  1000	P	170	PGROUP		; DPMI code	RM
+  1001	P	178	DGROUP		; ...  data
+;;1000	P	2E8	PGROUP		; DPMI code	386MAX
+;;1001	P	2F0	DGROUP		; ...  data
+;;1000	P	1C0	PGROUP		; DPMI code	QEMM
+;;1001	P	1C8	DGROUP		; ...  data
+;;1000	P	 90	PGROUP		; DPMI code	EMM386
+;;1001	P	 98	DGROUP		; ...  data
+
+; V86 mode segments
+  1010	V	*	RGROUP		; Device DPMI resident code
+  1010	V	*	NGROUP		; Non-resident code/data
+  1010	V	*	XGROUP		; More non-resident code/data
+
+

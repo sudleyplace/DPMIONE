@@ -1,0 +1,21 @@
+ToDo
+----
+* Check all *FIXME*s
+* Test swapfile
+* Check TEST24
+* Fix Spurious NT bit bug
+
+
+Done
+----
+* Test unload
+* Check low DOS and extended memory footprint
+* Check TEST23
+* Test with Win 3.x
+* Run other DPMI test suites
+* Check all IRETDs
+* Check running as device driver
+* Implement DOS translation services for VDS
+
+
+

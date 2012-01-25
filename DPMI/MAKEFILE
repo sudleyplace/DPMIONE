@@ -1,0 +1,169 @@
+
+PRGNAME=DPMI			# Default program name
+OEM=RET 			# Default build type
+BIN=$(BINDIR)			# Directory for .lod and .ssf
+O=$(OEM)\			# OEM .obj's and temporary .inc's
+I=$(INCDIR)			# Path for include files
+G=$(WHDIR)			# Path for include files
+S=$(WHDIR)DPMI\ 		# Path for source files
+P=R:\MAX\STATUTIL\		# Utility routines
+
+MASM1=ML
+MASM2=MASM
+
+# Default options for MASM 6.11a (MASM1) and 5.10b (MASM2)
+###MOPT=$(ASMOPT) /ml /p /r /t /w1
+AFLAGS1=/W1 /Cp /Zm /c	 # MASM 6.11a options
+AFLAGS2=/W1 /p /t /Ml /r # MASM 5.10b options
+
+# Default include path for MASM
+ALLINC=$(S);$(G);$(I)
+
+{$(S)}.asm{$(O)}.obj:
+	set INCLUDE=$(ALLINC);$(INCLUDE)
+	masm %s $(AFLAGS2),$(O);
+
+{$(P)}.asm{$(O)}.obj:
+	set INCLUDE=$(ALLINC);$(INCLUDE)
+	masm %s $(AFLAGS2),$(O) /DW32;
+
+# Define all .OBJ's
+OBJS=	$(O)DPMI_1ST.OBJ  \
+	$(O)DPMI_ARG.OBJ  \
+	$(O)DPMI_D10.OBJ  \
+	$(O)DPMI_D15.OBJ  \
+	$(O)DPMI_D21.OBJ  \
+	$(O)DPMI_D33.OBJ  \
+	$(O)DPMI_D4B.OBJ  \
+	$(O)DPMI_Dxx.OBJ  \
+	$(O)DPMI_DIF.OBJ  \
+	$(O)DPMI_FCN.OBJ  \
+	$(O)DPMI_I0D.OBJ  \
+	$(O)DPMI_I0E.OBJ  \
+	$(O)DPMI_I2F.OBJ  \
+	$(O)DPMI_I31.OBJ  \
+	$(O)DPMI_J31.OBJ  \
+	$(O)DPMI_K31.OBJ  \
+	$(O)DPMI_L31.OBJ  \
+	$(O)DPMI_M31.OBJ  \
+	$(O)DPMI_N31.OBJ  \
+	$(O)DPMI_BSM.OBJ  \
+	$(O)DPMI_IDT.OBJ  \
+	$(O)DPMI_LSM.OBJ  \
+	$(O)DPMI_MSC.OBJ  \
+	$(O)DPMI_MSG.OBJ  \
+	$(O)DPMI_PPM.OBJ  \
+	$(O)DPMI_RSP.OBJ  \
+	$(O)DPMI_SHR.OBJ  \
+	$(O)DPMI_VME.OBJ  \
+	$(O)DPMI_VMM.OBJ  \
+#####	$(O)PRINTF.OBJ	  \
+	$(O)VERSION.OBJ
+
+
+ALL:	 $(BIN)$(PRGNAME).LOD \
+	 $(BIN)$(PRGNAME).SSF
+
+DEPSCAN = -r$(SRCROOT)
+DEPSCAN = $(DEPSCAN) -p{$$(S)}
+DEPSCAN = $(DEPSCAN) -t$(S)={$$(S)},$(G)=$$(G)
+DEPSCAN = $(DEPSCAN) *.asm
+DEPSCAN = $(DEPSCAN) >$(O)dpmidep.inc
+
+DEPSCAN: $(S)MAKEFILE
+	depscan $(DEPSCAN)
+
+$(S)MAKEFILE: $(O)dpmidep.inc
+
+!if exist ($(O)dpmidep.inc) == 0
+!if [depscan $(DEPSCAN)]
+!endif
+!endif
+!include $(O)dpmidep.inc
+
+
+$(BIN)$(PRGNAME).LOD:  $(O)$(PRGNAME).LOD
+	 xc/r	 %s $@
+
+$(BIN)$(PRGNAME).SSF:  $(O)$(PRGNAME).SSF
+	 xc/r	 %s $@
+
+$(O)$(PRGNAME).LOD:	$(OBJS) 		\
+			$(S)MAKEFILE		\
+			$(S)$(PRGNAME).WSG
+	 qlink @<<$(O)$(PRGNAME).ARF
+/NS:PROG-CODE $(OBJS: =+^
+)
+		$(O)$(PRGNAME).LOD
+		$(O)$(PRGNAME) /map /line ;
+<<KEEP
+	 mapssf -t$(O)$(PRGNAME).SSF -w$(PRGNAME).WSG -v+ $(O)$(PRGNAME).MAP
+######## mapssf 		     -w$(PRGNAME).WSG -v+ $(O)$(PRGNAME).MAP
+######## *FIXME*
+	 @ff $*/,/#
+
+$(O)PRINTF.OBJ:   $(P)PRINTF.ASM
+
+$(O)DPMI_1ST.OBJ: $(S)DPMI_1ST.ASM  $(DPMI_1ST_ADEP)
+
+$(O)DPMI_ARG.OBJ: $(S)DPMI_ARG.ASM  $(DPMI_ARG_ADEP)
+
+$(O)DPMI_D10.OBJ: $(S)DPMI_D10.ASM  $(DPMI_D10_ADEP)
+
+$(O)DPMI_D15.OBJ: $(S)DPMI_D15.ASM  $(DPMI_D15_ADEP)
+
+$(O)DPMI_D21.OBJ: $(S)DPMI_D21.ASM  $(DPMI_D21_ADEP)
+
+$(O)DPMI_D33.OBJ: $(S)DPMI_D33.ASM  $(DPMI_D33_ADEP)
+
+$(O)DPMI_D4B.OBJ: $(S)DPMI_D4B.ASM  $(DPMI_D4B_ADEP)
+
+$(O)DPMI_Dxx.OBJ: $(S)DPMI_Dxx.ASM  $(DPMI_Dxx_ADEP)
+
+$(O)DPMI_DIF.OBJ: $(S)DPMI_DIF.ASM  $(DPMI_DIF_ADEP)
+###	set INCLUDE=$(ALLINC);$(INCLUDE)
+###	$(MASM1) $(AFLAGS1) /Fo$(O) /DW32 %s
+
+$(O)DPMI_FCN.OBJ: $(S)DPMI_FCN.ASM  $(DPMI_FCN_ADEP)
+
+$(O)DPMI_I0D.OBJ: $(S)DPMI_I0D.ASM  $(DPMI_I0D_ADEP)
+
+$(O)DPMI_I0E.OBJ: $(S)DPMI_I0E.ASM  $(DPMI_I0E_ADEP)
+
+$(O)DPMI_I2F.OBJ: $(S)DPMI_I2F.ASM  $(DPMI_I2F_ADEP)
+
+$(O)DPMI_I31.OBJ: $(S)DPMI_I31.ASM  $(DPMI_I31_ADEP)
+
+$(O)DPMI_J31.OBJ: $(S)DPMI_J31.ASM  $(DPMI_J31_ADEP)
+
+$(O)DPMI_K31.OBJ: $(S)DPMI_K31.ASM  $(DPMI_K31_ADEP)
+
+$(O)DPMI_L31.OBJ: $(S)DPMI_L31.ASM  $(DPMI_L31_ADEP)
+
+$(O)DPMI_M31.OBJ: $(S)DPMI_M31.ASM  $(DPMI_M31_ADEP)
+
+$(O)DPMI_N31.OBJ: $(S)DPMI_N31.ASM  $(DPMI_N31_ADEP)
+
+$(O)DPMI_BSM.OBJ: $(S)DPMI_BSM.ASM  $(DPMI_BSM_ADEP)
+
+$(O)DPMI_IDT.OBJ: $(S)DPMI_IDT.ASM  $(DPMI_IDT_ADEP)
+
+$(O)DPMI_LSM.OBJ: $(S)DPMI_LSM.ASM  $(DPMI_LSM_ADEP)
+
+$(O)DPMI_MSC.OBJ: $(S)DPMI_MSC.ASM  $(DPMI_MSC_ADEP)
+
+$(O)DPMI_MSG.OBJ: $(S)DPMI_MSG.ASM  $(DPMI_MSG_ADEP)
+
+$(O)DPMI_PPM.OBJ: $(S)DPMI_PPM.ASM  $(DPMI_PPM_ADEP)
+
+$(O)DPMI_RSP.OBJ: $(S)DPMI_RSP.ASM  $(DPMI_RSP_ADEP)
+
+$(O)DPMI_SHR.OBJ: $(S)DPMI_SHR.ASM  $(DPMI_SHR_ADEP)
+
+$(O)DPMI_VME.OBJ: $(S)DPMI_VME.ASM  $(DPMI_VME_ADEP)
+
+$(O)DPMI_VMM.OBJ: $(S)DPMI_VMM.ASM  $(DPMI_VMM_ADEP)
+
+$(O)VERSION.OBJ:  $(S)VERSION.ASM   $(VERSION_ADEP)
+
+
