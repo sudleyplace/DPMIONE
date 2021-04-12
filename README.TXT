@@ -132,11 +132,9 @@ found at http://www.sudleyplace.com/dpmione/.
 License
 -------
 
-This program may be used free for non-commercial use; commercial use
-requires a volume purchase agreement from the author.  It may be
-freely distributed as long as no part of the program or its
-documentation is altered and the program and its documentation are
-kept together.
+This program is licensed under the GNU Public License (GPL) 3 or any
+later version. For more details, see the file LICENSE that accompanies
+the program.
 
 
 Download
