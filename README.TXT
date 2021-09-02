@@ -140,8 +140,8 @@ the program.
 Download
 --------
 
-The program files may be downloaded from our FTP site at
-ftp://ftp.sudleyplace.com/sudleyplace/dpmione.zip.
+The program files may be downloaded from 
+http://sudleyplace.com/dpmione/dpmione.zip.
 
 
 Specification
