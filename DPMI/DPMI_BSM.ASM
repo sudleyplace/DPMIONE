@@ -8,7 +8,7 @@ COMMENT|		Module Specifications
 ********************************* QUALITAS ***********************************
 ******************************* CONFIDENTIAL *********************************
 
-Copyright:  (C) Copyright 1987-2003 Qualitas, Inc.
+Copyright:  (C) Copyright 1987-2003 Sudley Place Software.
 
 |
 .386p

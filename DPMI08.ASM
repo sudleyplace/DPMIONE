@@ -5,7 +5,7 @@
 
 COMMENT|		Module Specifications
 
-Copyright:  (C) Copyright 2003 Qualitas, Inc.  All rights reserved.
+Copyright:  (C) Copyright 2003 Sudley Place Software.
 
 Segmentation:  Group PGROUP:
 	       Stack   segment STACK, byte-aligned, stack,  class 'prog'
@@ -84,7 +84,7 @@ NCODE	segment use16 byte public 'prog' ; Start NCODE segment
 
 	public	MSG_COPY
 MSG_COPY db	'DPMI08   -- Version 1.00 ',CR,LF
-	db	'   (C) Copyright 2003 Qualitas, Inc. '
+	db	'   (C) Copyright 2003 Sudley Place Software. '
 	db	' All rights reserved.',CR,LF,EOS
 
 	NPPROC	COMSHELL -- Shell to Create a .COM File

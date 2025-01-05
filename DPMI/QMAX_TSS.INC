@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAX_TSS.INV   1.18   20 May 1993 16:39:24   BOB  $
 ;
-; (C) Copyright 1991-2004 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1991-2004 Sudley Place Software.  All rights reserved.
 ;
 ; QMAX_TSS.INC
 ;

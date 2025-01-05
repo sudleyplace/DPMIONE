@@ -2,7 +2,7 @@ VERSION equ	091
 
 ;' $Header$
 ;
-; (C) Copyright 1987-2004 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1987-2004 Sudley Place Software.  All rights reserved.
 ;
 ; VERSION.ASM
 ;

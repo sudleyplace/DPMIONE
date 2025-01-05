@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAX_XMS.INV   1.5   14 Oct 1993 13:14:10   HENRY  $
 ;
-; (C) Copyright 1987-93 Qualitas, Inc.	All rights reserved.
+; (C) Copyright 1987-93 Sudley Place Software              .
 ;
 ; QMAX_XMS.INC
 ;

@@ -8,7 +8,7 @@ COMMENT|		Module Specifications
 *********************************** QUALITAS ***********************************
 ********************************* CONFIDENTIAL *********************************
 
-Copyright:  (C) Copyright 1988-2004 Qualitas, Inc.  All rights reserved.
+Copyright:  (C) Copyright 1988-2004 Sudley Place Software.
 
 |
 .386p
@@ -1164,7 +1164,7 @@ MAPSEG_LST dw	?		; Last ...
 MSG_COPY db	@PROGNAM8,' -- Version '
 	db	VERS_H,'.',VERS_T,VERS_U
 	db	' -- ',@TAGLINE,CR,LF
-	db	'   (C) Copyright 1990-2004 Qualitas, Inc.  All rights reserved.',CR,LF,EOS
+	db	'   (C) Copyright 1990-2004 Sudley Place Software.',CR,LF,EOS
 
 	public	INISTK
 	align	4

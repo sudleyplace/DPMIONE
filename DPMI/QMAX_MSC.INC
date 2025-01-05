@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAX_MSC.INV   1.3   21 Oct 1993 10:04:30   HENRY  $
 ;
-; (C) Copyright 1992-3 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1992-3 Sudley Place Software.  All rights reserved.
 ;
 ; QMAX_MSC.INC
 ;

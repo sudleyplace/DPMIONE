@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAX_DYN.INV   1.3   06 Apr 1993 11:25:56   BOB  $
 ;
-; (C) Copyright 1987-93 Qualitas, Inc.	All rights reserved.
+; (C) Copyright 1987-93 Sudley Place Software              .
 ;
 ; QMAX_DYN.INC
 ;

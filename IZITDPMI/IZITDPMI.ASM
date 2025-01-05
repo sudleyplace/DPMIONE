@@ -5,7 +5,7 @@
 
 COMMENT|		Module Specifications
 
-Copyright:  (C) Copyright 2003 Qualitas, Inc.  All rights reserved.
+Copyright:  (C) Copyright 2003 Sudley Place Software.  All rights reserved.
 
 Segmentation:  Group PGROUP:
 	       Program segment CODE,  byte-aligned,  public, class 'code'
@@ -93,7 +93,7 @@ ERRCODE db	?		; Return code for DOS
 
 	public	MSG_COPY
 MSG_COPY db	'IZITDPMI -- Version 1.00 ',CR,LF
-	db	'   (C) Copyright 2003 Qualitas, Inc. '
+	db	'   (C) Copyright 2003 Sudley Place Software. '
 	db	' All rights reserved.',CR,LF,EOS
 
 	public	MSG_DPMIYES,MSG_DPMINO,MSG_ERRPM

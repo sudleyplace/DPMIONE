@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAX_EMM.INV   1.4   23 Jun 1993 12:43:08   HENRY  $
 ;
-; (C) Copyright 1987-92 Qualitas, Inc.	All rights reserved.
+; (C) Copyright 1987-92 Sudley Place Software              .
 ;
 ; QMAX_EMM.INC
 ;

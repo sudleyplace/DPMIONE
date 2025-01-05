@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386SWAT/PDTGRP.INV   1.3   10 Aug 1998 11:00:44   BOB  $
 ;
-; (C) Copyright 1987-98 Qualitas, Inc.	All rights reserved.
+; (C) Copyright 1987-98 Sudley Place Software              .
 ;
 ; PDTGRP.INC
 ;

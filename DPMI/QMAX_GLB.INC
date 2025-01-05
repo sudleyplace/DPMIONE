@@ -1,6 +1,6 @@
 ;' $Header$
 ;
-; (C) Copyright 1987-95 Qualitas, Inc.	All rights reserved.
+; (C) Copyright 1987-95 Sudley Place Software              .
 ;
 ; QMAX_GLB.INC
 ;

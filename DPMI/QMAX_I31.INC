@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAX_I31.INV   1.16   21 May 1993 15:52:18   BOB  $
 ;
-; (C) Copyright 1991-3 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1991-3 Sudley Place Software.  All rights reserved.
 ;
 ; QMAX_I31.INC
 ;

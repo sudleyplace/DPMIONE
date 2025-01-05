@@ -1,6 +1,6 @@
 ;' $Header$
 ;
-; (C) Copyright 1995-2002 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1995-2002 Sudley Place Software.
 ;
 ; GXT_HDR.INC
 ;

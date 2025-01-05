@@ -1,6 +1,6 @@
 ;' $Header$
 ;
-; (C) Copyright 2003-4 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 2003-4 Sudley Place Software.  All rights reserved.
 ;
 ; DPMI_EXP.INC
 ;

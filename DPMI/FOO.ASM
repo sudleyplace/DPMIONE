@@ -5,7 +5,7 @@
 
 COMMENT|		Module Specifications
 
-Copyright:  (C) Copyright 2004 Qualitas, Inc.  All rights reserved.
+Copyright:  (C) Copyright 2004 Sudley Place Software.  All rights reserved.
 
 Segmentation:  Group PGROUP:
 	       Stack   segment STACK, byte-aligned, stack,  class 'prog'
@@ -87,7 +87,7 @@ NCODE	segment use16 byte public 'prog' ; Start NCODE segment
 
 	public	MSG_COPY
 MSG_COPY db	'DTEST    -- Version 1.00 ',CR,LF
-	db	'   (C) Copyright 2004 Qualitas, Inc. '
+	db	'   (C) Copyright 2004 Sudley Place Software. '
 	db	' All rights reserved.',CR,LF,EOS
 
 	NPPROC	DTEST -- Test DPMI DOS Memory Allocate

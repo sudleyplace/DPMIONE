@@ -1,6 +1,6 @@
 ;' $Header$
 ;
-; (C) Copyright 1987-2003 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1987-2003 Sudley Place Software.
 ;
 ; GXT_ARG.INC
 ;

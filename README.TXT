@@ -1,5 +1,5 @@
 DPMIONE  -- A DPMI 1.0 Host -- Version 0.91
-(C) Copyright 1990-2004 Qualitas, Inc.	All Rights Reserved.
+(C) Copyright 1990-2004 Sudley Place Software              .
 
 
 Overview

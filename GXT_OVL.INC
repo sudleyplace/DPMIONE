@@ -1,6 +1,6 @@
 ;' $Header$
 ;
-; (C) Copyright 1987-2001 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1987-2001 Sudley Place Software.
 ;
 ; GXT_OVL.INC
 ;

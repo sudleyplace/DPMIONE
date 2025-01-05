@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAX_VMM.INV   1.7   12 Jul 1993 17:52:14   HENRY  $
 ;
-; (C) Copyright 1992-3 Qualitas, Inc.  All rights reserved.
+; (C) Copyright 1992-3 Sudley Place Software.  All rights reserved.
 ;
 ; QMAX_VMM.INC
 ;
