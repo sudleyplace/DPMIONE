@@ -1,6 +1,6 @@
 ;' $Header:   P:/PVCS/386MAX/QMAXDPMI.INV   1.13   25 May 1993 15:00:24   BOB  $
 ;
-; (C) Copyright 1991-2001 Sudley Place Software.  All rights reserved.
+; (C) Copyright 1991-2001 Sudley Place Software.   
 ;
 ; QMAXDPMI.INC
 ;

@@ -105,7 +105,7 @@ ZTAIL	label	byte
 	public	MSG_COPY
 MSG_COPY db	'INT08 -- Version 1.00 ',CR,LF
 	db	'   (C) Copyright 2002 Sudley Place Software. '
-	db	' All rights reserved.',CR,LF,EOS
+	db	' .',CR,LF,EOS
 
 	NPPROC	INIT08 -- Initialization Code For INT08
 	assume	ds:PGROUP,es:PGROUP,fs:nothing,gs:nothing,ss:nothing

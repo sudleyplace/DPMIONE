@@ -1,5 +1,5 @@
 DPMIONE  -- A DPMI 1.0 Host
-(C) Copyright 1990-2012 Sudley Place Software.  All Rights Reserved.
+(C) Copyright 1990-2012 Sudley Place Software.
 
 
 Author & Copyright

@@ -85,7 +85,7 @@ NCODE	segment use16 byte public 'prog' ; Start NCODE segment
 	public	MSG_COPY
 MSG_COPY db	'DPMI08   -- Version 1.00 ',CR,LF
 	db	'   (C) Copyright 2003 Sudley Place Software. '
-	db	' All rights reserved.',CR,LF,EOS
+	db	' .',CR,LF,EOS
 
 	NPPROC	COMSHELL -- Shell to Create a .COM File
 	assume	ds:PGROUP,es:PGROUP,fs:nothing,gs:nothing,ss:nothing

@@ -1,6 +1,6 @@
 ;' $Header$
 ;
-; (C) Copyright 2003 Sudley Place Software.  All rights reserved.
+; (C) Copyright 2003 Sudley Place Software.   
 ;
 ; DPMI_W9X.INC
 ;

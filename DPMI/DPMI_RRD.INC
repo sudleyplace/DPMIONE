@@ -1,6 +1,6 @@
 ;' $Header$
 ;
-; (C) Copyright 1995-2001 Sudley Place Software.  All rights reserved.
+; (C) Copyright 1995-2001 Sudley Place Software.   
 ;
 ; DPMI_RRD.INC
 ;
