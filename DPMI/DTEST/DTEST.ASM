@@ -5,7 +5,7 @@
 
 COMMENT|		Module Specifications
 
-Copyright:  (C) Copyright 2004 Qualitas, Inc.  All rights reserved.
+Copyright:  (C) Copyright 2004 Qualitas, Inc.
 
 Segmentation:  Group PGROUP:
 	       Stack   segment STACK, byte-aligned, stack,  class 'stack'
@@ -60,11 +60,11 @@ MSG_DOS_SEG db	'The segment # of the allocated DOS memory is %04X.',CR,LF
 MSG_PHYS db	'The physical address is %08lX.',CR,LF,0
 
 	public	MSG_ERR_NODPMI,MSG_ERR_GETMEM,MSG_ERR_EPM,MSG_ERR_GETALIAS,MSG_ERR_GETDMEM
-MSG_ERR_NODPMI db 'ÍÍ> No DPMI host available.',CR,LF,EOS
-MSG_ERR_GETMEM db 'ÍÍ> Unable to allocate memory for the HPDA.',CR,LF,EOS
-MSG_ERR_EPM db	  'ÍÍ> Unable to enter PM via DPMI services.',CR,LF,EOS
-MSG_ERR_GETALIAS db 'ÍÍ> Unable to allocate alias selector via DPMI services.',CR,LF,EOS
-MSG_ERR_GETDMEM db 'ÍÍ> Unable to allocate memory for the DOS buffer.',CR,LF,EOS
+MSG_ERR_NODPMI db 'ÃÃ> No DPMI host available.',CR,LF,EOS
+MSG_ERR_GETMEM db 'ÃÃ> Unable to allocate memory for the HPDA.',CR,LF,EOS
+MSG_ERR_EPM db	  'ÃÃ> Unable to enter PM via DPMI services.',CR,LF,EOS
+MSG_ERR_GETALIAS db 'ÃÃ> Unable to allocate alias selector via DPMI services.',CR,LF,EOS
+MSG_ERR_GETDMEM db 'ÃÃ> Unable to allocate memory for the DOS buffer.',CR,LF,EOS
 
 DATA	ends			; End DATA segment
 
